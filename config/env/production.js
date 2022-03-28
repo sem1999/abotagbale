@@ -148,9 +148,9 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     cors: {
-       allowOrigins: [
-         'https://abotagbale.herokuapp.com/,
-       ]
+      // allowOrigins: [
+      //   'https://example.com',
+      // ]
     },
 
   },
@@ -221,6 +221,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     cookie: {
+       
       secure: true,
       maxAge: 24 * 60 * 60 * 1000,  // 24 hours
     },
@@ -251,7 +252,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
      onlyAllowOrigins: [
-       'https://abotagbale.herokuapp.com/',
+       
       
      ],
 
