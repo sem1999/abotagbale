@@ -5,7 +5,7 @@ module.exports = function(req, res, next) {
 	if(req.headers && req.headers.authorization) {
 		//authorization header is present
 		var parts = req.headers.authorization.split(' ');
-		if(parts.length === 2) {
+		if(parts.length == 2) {
 			var scheme = parts[0];
 			var credentials = parts[1];
 			
@@ -47,6 +47,21 @@ module.exports = function(req, res, next) {
 			
 		}
 		//req.user = decoded;
-		next();
+
+        if(decoded.role == 'admedecin'){
+
+            next();
+
+        }else{
+
+            res.status(401).json({
+				status:'ko',
+				name: 'NotAuthorised',
+				message: 'You are not authorised to do this task '
+			})
+			
+			return;
+        }
+		
 	});
 };
