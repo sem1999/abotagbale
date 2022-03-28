@@ -27,7 +27,7 @@ module.exports = {
   fn: async function (inputs,exits) {
     try {
       data = await Centre.findOne({id:inputs.id});
-      exits.success(data);
+      return exits.success({status:'ok',centre:data});
     } catch (error) {
       return exits.success({ status:'ko',
       name:'internalError',

@@ -14,13 +14,13 @@ module.exports = {
 
             res.json({
                 status: 'ko',
-                name: 'usernamePasswordRequired',
+                name: 'DataVerificationError',
                 message: 'Veuillez renseigner le mot de passe et votre contact svp'
             });
 
         }
 
-        var data = await sails.helpers.login("" + req.body.pseudo, "" + req.body.password, "admedecin").intercept('UserRoleError', 'pseudoPasswordValidationError', 'noAccount', 'internalError', 'usernamePasswordRequired', 'UserRoleError');
+        var data = await sails.helpers.login("" + req.body.pseudo, "" + req.body.password, "admedecin").intercept('UserRoleError', 'pseudoPasswordValidationError', 'noAccount', 'internalError', 'DataVerificationError', 'UserRoleError');
 
         res.json(data);
 
@@ -33,7 +33,7 @@ module.exports = {
 
             res.json({
                 status: 'ko',
-                name: 'formdataRequired',
+                name: 'DataVerificationError',
                 message: 'Veuillez renseigner les données  svp'
             });
 
@@ -51,7 +51,7 @@ module.exports = {
 
             res.json({
                 status: 'ko',
-                name: 'formdataRequired',
+                name: 'DataVerificationError',
                 message: 'Veuillez renseigner les données  svp'
             });
 
@@ -68,7 +68,7 @@ module.exports = {
 
             res.json({
                 status: 'ko',
-                name: 'formDataRequired',
+                name: 'DataVerificationError',
                 message: 'Veuillez renseigner les données  svp'
             });
 
@@ -94,7 +94,7 @@ module.exports = {
 
             res.json({
                 status: 'ko',
-                name: 'formDataRequired',
+                name: 'DataVerificationError',
                 message: 'Veuillez renseigner les données  svp'
             });
 
@@ -113,7 +113,7 @@ module.exports = {
 
             res.json({
                 status: 'ko',
-                name: 'formDataRequired',
+                name: 'DataVerificationError',
                 message: 'Veuillez renseigner les données  svp'
             });
 

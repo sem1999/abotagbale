@@ -24,7 +24,7 @@ module.exports = {
   fn: async function (inputs, exits) {
     try {
       data = await Admin.findOne({ id: inputs.id });
-      exits.success(data);
+      return exits.success({status:'ok', admin:data});
     } catch (error) {
       return exits.success({
         status: 'ko',

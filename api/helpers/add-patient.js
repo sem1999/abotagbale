@@ -12,7 +12,6 @@ module.exports = {
   inputs: {
     nom: { type: 'string', required: true, },
     prenom: { type: 'string', required: true, },
-    pseudo:{type: 'string', required: true,},
     tel: { type: 'string', required: true, },
     card_id:{type: 'string',required:true} ,
     email:{type:'string', required: true,isEmail:true},
@@ -47,7 +46,7 @@ module.exports = {
 
       data =   await Patient.createEach([
        
-        { email: inputs.email, nom: inputs.nom, prenom:inputs.prenom, pseudo:inputs.pseudo, password:"1234", tel:inputs.tel, card_id:inputs.card_id,date_naissance:inputs.date_naissance ,code_connection : code, medecin : inputs.medecin },
+        { email: inputs.email, nom: inputs.nom, prenom:inputs.prenom, password:"1234", tel:inputs.tel, card_id:inputs.card_id,date_naissance:inputs.date_naissance ,code_connection : code, medecin : inputs.medecin },
        
       ])
       .fetch()
@@ -58,20 +57,20 @@ module.exports = {
 
         await Patient.destroy({ id : data[0].id});
 
-        return exits.smsSenderError({ status:'ko',
+        return exits.success({ status:'ko',
         name:'smsSenderError',
         message:'Une erreur est survenue lors de l\'envoie du sms  ',
         description:'Veuillez recommencer l\'enregistrement ou contacter un admin  '});
 
       }else{
 
-        return  exits.success(data[0]);
+        return  exits.success({status: 'ok' , patient : data[0] , message : 'patient bien créer '});
       }
         
         
       } catch (error) {
   
-        return exits.internalError({ status:'ko',
+        return exits.success({ status:'ko',
         name:'internalError',
         message:'Une erreur interne est survenue  ',
         trace:error,

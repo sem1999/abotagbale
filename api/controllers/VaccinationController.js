@@ -16,7 +16,7 @@ module.exports = {
 
             res.json({
                 status: 'ko',
-                name: 'formdataRequired',
+                name: 'DataVerificationError',
                 message: 'Veuillez renseigner les données  svp'
             });
 
@@ -43,7 +43,7 @@ module.exports = {
 
             res.json({
                 status: 'ko',
-                name: 'formdataRequired',
+                name: 'DataVerificationError',
                 message: 'Veuillez renseigner les données  svp'
             });
 
@@ -62,7 +62,7 @@ module.exports = {
 
             res.json({
                 status: 'ko',
-                name: 'formDataRequired',
+                name: 'DataVerificationError',
                 message: 'Veuillez renseigner les données  svp'
             });
 
@@ -81,7 +81,7 @@ module.exports = {
 
             res.json({
                 status: 'ko',
-                name: 'formDataRequired',
+                name: 'DataVerificationError',
                 message: 'Veuillez renseigner les données  svp'
             });
 
@@ -100,7 +100,7 @@ module.exports = {
 
             res.json({
                 status: 'ko',
-                name: 'formDataRequired',
+                name: 'DataVerificationError',
                 message: 'Veuillez renseigner les données  svp'
             });
 
@@ -119,7 +119,7 @@ module.exports = {
 
             res.json({
                 status: 'ko',
-                name: 'formDataRequired',
+                name: 'DataVerificationError',
                 message: 'Veuillez renseigner les données  svp'
             });
 

@@ -30,7 +30,7 @@ module.exports = {
     try {
       data = await Admin.find();
 
-     return  exits.success(data);
+     return  exits.success({status:'ok', admins:data});
      
     } catch (error) {
       return exits.succes({ status:'ko',

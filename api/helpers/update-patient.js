@@ -57,7 +57,7 @@ module.exports = {
 
     } catch (error) {
 
-      return exits.internalError({
+      return exits.success({
 
         status: 'ko',
         name: 'internalError',

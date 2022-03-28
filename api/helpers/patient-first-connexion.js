@@ -74,7 +74,7 @@ module.exports = {
 
     if (!inputs.code) {
 
-      return exits.internalError({
+      return exits.success({
         status: 'ko',
         name: 'internalError',
         message: 'Une erreur interne est survenue ',
@@ -88,7 +88,7 @@ module.exports = {
       if (err) {
 
 
-        return exits.noAccountError({
+        return exits.success({
           status: 'ko',
           name: 'noAccount',
           message: 'Le code  utilisé n\'a pas été retrouver',
@@ -101,7 +101,7 @@ module.exports = {
 
       if (!users) {
 
-        return exits.noAccountError({
+        return exits.success({
           status: 'ko',
           name: 'noAccount',
           message: 'Le pseudo  utilisé n\'a pas été retrouver',
@@ -114,7 +114,7 @@ module.exports = {
 
          Patient.update(users.id,
 
-          { code_connection: 0 },
+          { code_connection: 0, status:true },
 
         );
 
@@ -124,7 +124,7 @@ module.exports = {
 
     });
 
-
+s
 
 
 

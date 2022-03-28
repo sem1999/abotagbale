@@ -31,7 +31,7 @@ module.exports = {
     try {
       data = await Vaccin.find();
 
-      exits.success(data);
+      exits.success({status: 'ok', vaccins:data});
     } catch (error) {
       return exits.success({ status:'ko',
       name:'internalError',

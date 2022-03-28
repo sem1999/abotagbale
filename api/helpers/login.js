@@ -148,7 +148,7 @@ module.exports = {
 
     if (!inputs.pseudo || !inputs.password) {
 
-      return exits.internalError({
+      return exits.success({
         status: 'ko',
         name: 'internalError',
         message: 'Une erreur interne est survenue ',
@@ -168,7 +168,7 @@ module.exports = {
         if (err) {
 
 
-          return exits.usernamePasswordRequired({
+          return exits.success({
             status: 'ko',
             name: 'usernamePasswordRequired',
             message: 'Veuillez renseigner le mot de passe et votre pseudo svp',
@@ -181,7 +181,7 @@ module.exports = {
 
         if (!users) {
 
-          return exits.noAccount({
+          return exits.success({
             status: 'ko',
             name: 'noAccount',
             message: 'Le pseudo  utilisé n\'a pas été retrouver',
@@ -194,7 +194,7 @@ module.exports = {
           bcrypt.compare(password, users.password, function (err, valid) {
             if (err) {
 
-              return exits.pseudoPasswordValidationError({
+              return exits.success({
                 status: 'ko',
                 name: 'pseudoPasswordValidationError',
                 message: 'Le pseudo utilisé ou le mot de passe ne sont pas valide ',
@@ -208,7 +208,7 @@ module.exports = {
 
 
 
-              return exits.pseudoPasswordValidationError({
+              return exits.success({
                 status: 'ko',
                 name: 'pseudoPasswordValidationError',
                 message: 'Le pseudo utilisé ou le mot de passe ne sont pas valide ',
@@ -226,7 +226,7 @@ module.exports = {
                 if (users.role !== 'admin') {
 
 
-                  return exits.usernamePasswordRequired({
+                  return exits.success({
                     status: 'ko',
                     name: 'pseudoPasswordValidationError',
                     message: 'Le pseudo utilisé ou le mot de passe ne sont pas valide ',
@@ -251,7 +251,7 @@ module.exports = {
 
               } else {
 
-                return exits.pseudoPasswordValidationError({
+                return exits.success({
                   status: 'ko',
                   name: 'pseudoPasswordValidationError',
                   message: 'Le pseudo utilisé ou le mot de passe ne sont pas valide ',
@@ -391,7 +391,7 @@ module.exports = {
         if (err) {
 
 
-          return exits.usernamePasswordRequired({
+          return exits.success({
             status: 'ko',
             name: 'usernamePasswordRequired',
             message: 'Veuillez renseigner le mot de passe et votre pseudo svp',
@@ -404,7 +404,7 @@ module.exports = {
 
         if (!users) {
 
-          return exits.noAccount({
+          return exits.success({
             status: 'ko',
             name: 'noAccount',
             message: 'Le pseudo  utilisé n\'a pas été retrouver',
@@ -417,7 +417,7 @@ module.exports = {
           bcrypt.compare(password, users.password, function (err, valid) {
             if (err) {
 
-              return exits.pseudoPasswordValidationError({
+              return exits.success({
                 status: 'ko',
                 name: 'pseudoPasswordValidationError',
                 message: 'Le pseudo utilisé ou le mot de passe ne sont pas valide ',
@@ -431,7 +431,7 @@ module.exports = {
 
 
 
-              return exits.pseudoPasswordValidationError({
+              return exits.success({
                 status: 'ko',
                 name: 'pseudoPasswordValidationError',
                 message: 'Le pseudo utilisé ou le mot de passe ne sont pas valide ',
@@ -449,7 +449,7 @@ module.exports = {
                 if (users.role !== 'admedecin') {
 
 
-                  return exits.usernamePasswordRequired({
+                  return exits.success({
                     status: 'ko',
                     name: 'usernamePasswordRequired',
                     message: 'Veuillez renseigner le mot de passe et votre pseudo svp',
@@ -473,7 +473,7 @@ module.exports = {
 
               } else {
 
-                return exits.pseudoPasswordValidationError({
+                return exits.success({
                   status: 'ko',
                   name: 'pseudoPasswordValidationError',
                   message: 'Le pseudo utilisé ou le mot de passe ne sont pas valide ',

@@ -24,7 +24,7 @@ module.exports = {
   fn: async function (inputs,exits) {
     try {
       data = await Vaccin.findOne({id:inputs.id});
-      exits.success(data);
+      exits.success({status:'ok',vaccin:data});
     } catch (error) {
       return exits.success({ status:'ko',
       name:'internalError',

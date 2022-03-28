@@ -25,9 +25,9 @@ module.exports = {
     try {
       data = await Medecin_admin.find();
 
-      return exits.success(data);
+      return exits.success({status:'ok', medecins : data});
     } catch (error) {
-      return exits.internalError({
+      return exits.success({
         status: 'ko',
         name: 'internalError',
         message: 'Une erreur interne est survenue  ',

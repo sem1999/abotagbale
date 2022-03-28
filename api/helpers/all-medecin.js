@@ -28,7 +28,7 @@ module.exports = {
     try {
       data = await Medecin.find();
 
-      exits.success(data);
+      exits.success({status:'ok', medecins : data});
     } catch (error) {
       return exits.success({ status:'ko',
       name:'internalError',

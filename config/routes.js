@@ -85,11 +85,11 @@ module.exports.routes = {
 
   // medecin api 
 
-  'POST /api/v1/add/medecin ': { controller: 'MedecinController', action: 'add_medecin_api', csrf: false },
-  'POST /api/v1/all/medecin ': { controller: 'MedecinController', action: 'all_medecin_api', csrf: false },
-  'POST /api/v1/update/medecin ': { controller: 'MedecinController', action: 'update_medecin_api', csrf: false },
-  'POST /api/v1/find/medecin/by/id ': { controller: 'MedecinController', action: 'find_medecin_by_id_api', csrf: false },
-  'POST /api/v1/find/medecin/by/centre ': { controller: 'MedecinController', action: 'find_medecin_by_centre_api', csrf: false },
+  'POST /api/v1/add/medecin': { controller: 'MedecinController', action: 'add_medecin_api', csrf: false },
+  'POST /api/v1/all/medecin': { controller: 'MedecinController', action: 'all_medecin_api', csrf: false },
+  'POST /api/v1/update/medecin': { controller: 'MedecinController', action: 'update_medecin_api', csrf: false },
+  'POST /api/v1/find/medecin/by/id': { controller: 'MedecinController', action: 'find_medecin_by_id_api', csrf: false },
+  'POST /api/v1/find/medecin/by/centre': { controller: 'MedecinController', action: 'find_medecin_by_centre_api', csrf: false },
 
   // medecin admin  api
 

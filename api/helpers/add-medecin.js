@@ -44,7 +44,7 @@ module.exports = {
 
       data =   await Medecin.createEach([
        
-        { email: inputs.email, nom: inputs.nom, prenom:inputs.prenom,pseudo:inputs.pseudo, password:inputs.password, tel:inputs.tel,card_id:inputs.card_id,date_naissance:inputs.date_naissance , centre : inputs.centre, medecin: inputs.adminId },
+        { email: inputs.email, nom: inputs.nom, prenom:inputs.prenom,pseudo:inputs.pseudo, password:inputs.password, tel:inputs.tel,card_id:inputs.card_id,date_naissance:inputs.date_naissance , centre : inputs.centre, medecin_admin: inputs.adminId },
        
       ])
 
@@ -54,7 +54,7 @@ module.exports = {
         
       } catch (error) {
   
-        return exits.internalError({ status:'ko',
+        return exits.success({ status:'ko',
         name:'internalError',
         message:'Une erreur interne est survenue  ',
         trace:error,

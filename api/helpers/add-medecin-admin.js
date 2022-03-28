@@ -55,7 +55,7 @@ module.exports = {
         
       } catch (error) {
   
-        return exits.internalError({ status:'ko',
+        return exits.success({ status:'ko',
         name:'internalError',
         message:'Une erreur interne est survenue  ',
         trace:error,

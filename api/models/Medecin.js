@@ -45,7 +45,32 @@ module.exports = {
 
 
 
-
+    customToJSON: function () {
+      return _.omit(this, ['password',]);
+  
+    },
+    beforeCreate: function (admin, cb) {
+      bcrypt.genSalt(10, function (err, salt) {
+        bcrypt.hash(admin.password, salt, null, function (err, hash) {
+          if (err) return cb(err);
+          admin.password = hash;
+          return cb();
+        });
+      });
+    },
+    beforeUpdate: function (admin, cb) {
+      if (admin.password) {
+      bcrypt.genSalt(10, function (err, salt) {
+        bcrypt.hash(admin.password, salt, null, function (err, hash) {
+          if (err) return cb(err);
+          admin.password = hash;
+          return cb();
+        });
+      });
+    }else{
+      return cb();
+    }
+    },
 
   },
 
