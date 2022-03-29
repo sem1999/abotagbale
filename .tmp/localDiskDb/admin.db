@@ -1,4 +1,4 @@
-{"$$indexCreated":{"fieldName":"id","unique":true,"sparse":false}}
-{"$$indexCreated":{"fieldName":"password","unique":true,"sparse":false}}
 {"email":"akade@example.com","nom":"Ryan ","prenom":"Dahl","pseudo":"ghostadmin","password":"$2a$10$AYXz9N9i24o70YK8zIsgi.jB5ROo/47JVLOQqFhoBgTCxCRqdPLeO","tel":"22893413423","role":"admin","card_id":"222222222222","date_naissance":"1/2/2000","createdAt":1648469628303,"updatedAt":1648469628303,"id":1,"status":true,"_id":1}
 {"email":"ghost@mail.com","nom":"admin","prenom":"admin","pseudo":"admin","password":"$2a$10$XjbzTGqe/PGr9BH/gbSoweiHxm8nUa/IWYlqEGPRxg6MkWOsFhAv.","tel":"22893413423","card_id":"123449999999","date_naissance":"12/05/1999","createdAt":1648469659445,"updatedAt":1648469659445,"id":2,"status":true,"role":"admin","_id":2}
+{"$$indexCreated":{"fieldName":"id","unique":true,"sparse":false}}
+{"$$indexCreated":{"fieldName":"password","unique":true,"sparse":false}}

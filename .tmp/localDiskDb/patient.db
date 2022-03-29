@@ -1,4 +1,4 @@
+{"email":"baba@mail.com","nom":"BABA","prenom":"TCHAO","pseudo":"baba","password":"1234","tel":"22893068270","card_id":"557767777767657","date_naissance":"20/03/1993","code_connection":"67828515","medecin":1,"createdAt":1648469676635,"updatedAt":1648469676635,"id":1,"role":"vaccinate","status":false,"_id":1}
 {"$$indexCreated":{"fieldName":"id","unique":true,"sparse":false}}
 {"$$indexCreated":{"fieldName":"password","unique":true,"sparse":false}}
 {"$$indexCreated":{"fieldName":"code_connection","unique":true,"sparse":false}}
-{"email":"baba@mail.com","nom":"BABA","prenom":"TCHAO","pseudo":"baba","password":"1234","tel":"22893068270","card_id":"557767777767657","date_naissance":"20/03/1993","code_connection":"67828515","medecin":1,"createdAt":1648469676635,"updatedAt":1648469676635,"id":1,"role":"vaccinate","status":false,"_id":1}
