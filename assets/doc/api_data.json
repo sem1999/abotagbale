@@ -761,10 +761,200 @@
   },
   {
     "type": "post",
+    "url": "/api/v1/all/admin/medecin",
+    "title": "Afficher tous les medecins admin",
+    "version": "1.0.0",
+    "name": "Affiche_tous_les_medecins_admin",
+    "group": "Admin_medecin",
+    "description": "<p>Pour afficher  les informations des medecins admin</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token unique de l'utilisateur disponible quand l'utilisateur se log  .</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Exemple:",
+          "content": "{\n  \"Content-Type\": \"application/x-www-form-urlencoded\",\n  \"Authorization\": \"Bearer token\",\n  \"Accept\": \"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "medecins",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Reponse de succès :",
+          "content": "\n HTTP/1.1 200 OK\n\n{\n  \"status\": \"ok\",\n  \"medecins : [{}]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "internalError",
+            "description": "<p>Une erreur est survenue à la recupération des données</p>"
+          }
+        ],
+        "Error 5xx": [
+          {
+            "group": "Error 5xx",
+            "optional": false,
+            "field": "InternalError",
+            "description": "<p>Service   indisponible .</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Exemple reponse d'échec :",
+          "content": "HTTP/1.1 200 \n{\n  \"status\": \"ko\",\n  \"name\": \"internalError\",\n  \"trace\":\"\"\n  \"message\" : \"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./doc 2.js",
+    "groupTitle": "Admin_medecin"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/find/admin/medecin/by/id",
+    "title": "Afficher un medecin admin en particulier",
+    "version": "1.0.0",
+    "name": "Affiche_un_medecin_admin_par_id",
+    "group": "Admin_medecin",
+    "description": "<p>Pour afficher  les informations d'un  medecin admin par son id</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token unique de l'utilisateur disponible quand l'utilisateur se log  .</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Exemple:",
+          "content": "{\n  \"Content-Type\": \"application/x-www-form-urlencoded\",\n  \"Authorization\": \"Bearer token\",\n  \"Accept\": \"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Body-Exemple:",
+          "content": "\n   \n{\n  \n  \"id\":1\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "medecin",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Reponse de succès :",
+          "content": "\n HTTP/1.1 200 OK\n\n{\n  \"status\": \"ok\",\n  \"medecin: {}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "internalError",
+            "description": "<p>Une erreur est survenue à la recupération des données</p>"
+          }
+        ],
+        "Error 5xx": [
+          {
+            "group": "Error 5xx",
+            "optional": false,
+            "field": "InternalError",
+            "description": "<p>Service   indisponible .</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Exemple reponse d'échec :",
+          "content": "HTTP/1.1 200 \n{\n  \"status\": \"ko\",\n  \"name\": \"internalError\",\n  \"trace\":\"\"\n  \"message\" : \"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./doc 2.js",
+    "groupTitle": "Admin_medecin"
+  },
+  {
+    "type": "post",
     "url": "/api/v1/add/admin/medecin",
     "title": "Ajouter un Medecin admin",
     "version": "1.0.0",
-    "name": "Ajouter_Medecin_Admin",
+    "name": "Ajouter_un_medecin_Admin",
     "group": "Admin_medecin",
     "description": "<p>Pour l'ajout d'un medecin admin</p>",
     "header": {
@@ -1863,7 +2053,7 @@
     "url": "/api/v1/find/centre/by/id",
     "title": "Afficher un centre en particulier",
     "version": "1.0.0",
-    "name": "Affiche_centre",
+    "name": "Affiche_un_centre_par_son_id",
     "group": "Centre",
     "description": "<p>Pour afficher  les informations d'un  centre par son id</p>",
     "header": {
@@ -2545,7 +2735,7 @@
       "examples": [
         {
           "title": "Reponse de succès :",
-          "content": "   HTTP/1.1 200 OK\n{\n   status:'ok',\n   medecin:{\"pseudo\": \"baba\",\n \"createdAt\": 1648280820835,\n \"updatedAt\": 1648280820835,\n \"id\": 5,\n \"nom\": \"BABA\",\n \"prenom\": \"TCHAO\",\n \"tel\": \"22893068270\",\n \"password\": \"silence44\",\n \"role\": \"vaccinate\",\n \"card_id\": \"557767777767657\",\n \"email\": \"baba@mail.com\",\n \"date_naissance\": \"20/03/1993\",\n \"status\": \"ok\",\n \"medecin_admin\": \"1\"\n \"centre\":\"1\"}\n \n}",
+          "content": "   HTTP/1.1 200 OK\n{\n   status:'ok',\n   medecin:{\"pseudo\": \"baba\",\n \"createdAt\": 1648280820835,\n \"updatedAt\": 1648280820835,\n \"id\": 5,\n \"nom\": \"BABA\",\n \"prenom\": \"TCHAO\",\n \"tel\": \"22893068270\",\n \"password\": \"silence44\",\n \"role\": \"vaccinate\",\n \"card_id\": \"557767777767657\",\n \"email\": \"baba@mail.com\",\n \"date_naissance\": \"20/03/1993\",\n \"status\": \"ok\",\n \"Admin_medecin\": \"1\"\n \"centre\":\"1\"}\n \n}",
           "type": "json"
         }
       ]
@@ -2876,196 +3066,6 @@
     },
     "filename": "./doc 2.js",
     "groupTitle": "Medecin"
-  },
-  {
-    "type": "post",
-    "url": "/api/v1/all/admin/medecin",
-    "title": "Afficher tous les medecins admin",
-    "version": "1.0.0",
-    "name": "Affiche_medecin_admin",
-    "group": "Medecin_admin",
-    "description": "<p>Pour afficher  les informations des medecins admin</p>",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>Token unique de l'utilisateur disponible quand l'utilisateur se log  .</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Header-Exemple:",
-          "content": "{\n  \"Content-Type\": \"application/x-www-form-urlencoded\",\n  \"Authorization\": \"Bearer token\",\n  \"Accept\": \"application/json\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "status",
-            "description": ""
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "medecins",
-            "description": ""
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Reponse de succès :",
-          "content": "\n HTTP/1.1 200 OK\n\n{\n  \"status\": \"ok\",\n  \"medecins : [{}]\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "error": {
-      "fields": {
-        "Error 4xx": [
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "internalError",
-            "description": "<p>Une erreur est survenue à la recupération des données</p>"
-          }
-        ],
-        "Error 5xx": [
-          {
-            "group": "Error 5xx",
-            "optional": false,
-            "field": "InternalError",
-            "description": "<p>Service   indisponible .</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Exemple reponse d'échec :",
-          "content": "HTTP/1.1 200 \n{\n  \"status\": \"ko\",\n  \"name\": \"internalError\",\n  \"trace\":\"\"\n  \"message\" : \"\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "./doc 2.js",
-    "groupTitle": "Medecin_admin"
-  },
-  {
-    "type": "post",
-    "url": "/api/v1/find/admin/medecin/by/id",
-    "title": "Afficher un medecin admin en particulier",
-    "version": "1.0.0",
-    "name": "Affiche_medecin_admin",
-    "group": "Medecin_admin",
-    "description": "<p>Pour afficher  les informations d'un  medecin admin par son id</p>",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>Token unique de l'utilisateur disponible quand l'utilisateur se log  .</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Header-Exemple:",
-          "content": "{\n  \"Content-Type\": \"application/x-www-form-urlencoded\",\n  \"Authorization\": \"Bearer token\",\n  \"Accept\": \"application/json\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "parameter": {
-      "fields": {
-        "Body": [
-          {
-            "group": "Body",
-            "type": "String",
-            "optional": false,
-            "field": "id",
-            "description": ""
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Body-Exemple:",
-          "content": "\n   \n{\n  \n  \"id\":1\n\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "status",
-            "description": ""
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "medecin",
-            "description": ""
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Reponse de succès :",
-          "content": "\n HTTP/1.1 200 OK\n\n{\n  \"status\": \"ok\",\n  \"medecin: {}\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "error": {
-      "fields": {
-        "Error 4xx": [
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "internalError",
-            "description": "<p>Une erreur est survenue à la recupération des données</p>"
-          }
-        ],
-        "Error 5xx": [
-          {
-            "group": "Error 5xx",
-            "optional": false,
-            "field": "InternalError",
-            "description": "<p>Service   indisponible .</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Exemple reponse d'échec :",
-          "content": "HTTP/1.1 200 \n{\n  \"status\": \"ko\",\n  \"name\": \"internalError\",\n  \"trace\":\"\"\n  \"message\" : \"\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "./doc 2.js",
-    "groupTitle": "Medecin_admin"
   },
   {
     "type": "post",
@@ -3814,91 +3814,6 @@
   },
   {
     "type": "post",
-    "url": "/api/v1/all/vaccination",
-    "title": "Afficher tous les vaccinations",
-    "version": "1.0.0",
-    "name": "Affiche_vaccinations",
-    "group": "Vaccin",
-    "description": "<p>Pour afficher  les informations des vaccinations</p>",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>Token unique de l'utilisateur disponible quand l'utilisateur se log  .</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Header-Exemple:",
-          "content": "{\n  \"Content-Type\": \"application/x-www-form-urlencoded\",\n  \"Authorization\": \"Bearer token\",\n  \"Accept\": \"application/json\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "status",
-            "description": ""
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "vaccinations",
-            "description": ""
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Reponse de succès :",
-          "content": "\n HTTP/1.1 200 OK\n\n{\n  \"status\": \"ok\",\n  \"vaccinations : [{}]\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "error": {
-      "fields": {
-        "Error 4xx": [
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "internalError",
-            "description": "<p>Une erreur est survenue à la recupération des données</p>"
-          }
-        ],
-        "Error 5xx": [
-          {
-            "group": "Error 5xx",
-            "optional": false,
-            "field": "InternalError",
-            "description": "<p>Service   indisponible .</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Exemple reponse d'échec :",
-          "content": "HTTP/1.1 200 \n{\n  \"status\": \"ko\",\n  \"name\": \"internalError\",\n  \"trace\":\"\"\n  \"message\" : \"\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "./doc 2.js",
-    "groupTitle": "Vaccin"
-  },
-  {
-    "type": "post",
     "url": "/api/v1/all/vaccin",
     "title": "Afficher tous les vaccins",
     "version": "1.0.0",
@@ -3975,6 +3890,170 @@
         {
           "title": "Exemple reponse d'échec :",
           "content": "HTTP/1.1 200 \n{\n  \"status\": \"ko\",\n  \"name\": \"internalError\",\n  \"trace\":\"\"\n  \"message\" : \"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./doc 2.js",
+    "groupTitle": "Vaccin"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/add/vaccin",
+    "title": "Ajouter un vaccin",
+    "version": "1.0.0",
+    "name": "Ajouter_un_vaccin",
+    "group": "Vaccin",
+    "description": "<p>Pour l'ajout d'un Vaccin</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token unique de l'utilisateur disponible quand l'utilisateur se log  .</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Exemple:",
+          "content": "{\n  \"Content-Type\": \"application/x-www-form-urlencoded\",\n  \"Authorization\": \"Bearer token\",\n  \"Accept\": \"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "libelle",
+            "description": ""
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "maladie",
+            "description": ""
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "description",
+            "description": ""
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "doseRcmd",
+            "description": ""
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "codeVaccin",
+            "description": ""
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "dateExpiration",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Body-Exemple:",
+          "content": "\n    \n{\n     \n       \"libelle\": \"ASTElkm\",\n       \"maladie\": \"corona\",\n       \"description\": \"lol\",\n       \"doseRcmd\": \"1\",\n       \"codeVaccin\": \"12\",\n       \"dateExpiration\": \"5\",\n      \n }",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "vaccin",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Reponse de succès :",
+          "content": "    HTTP/1.1 200 OK\n    {\n    status:'ok',\n    vacin: {\n        \"createdAt\": 1648534987580,\n        \"updatedAt\": 1648534987580,\n        \"id\": 3,\n        \"libelle\": \"ASTElkm\",\n        \"maladie\": \"corona\",\n        \"description\": \"lol\",\n        \"dose_rcmd\": \"1\",\n        \"code_vaccin\": \"12\",\n        \"etat_vaccin\": \"good\",\n        \"date_expiration\": \"5\",\n        \"status\": true\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AuthorizationFormat",
+            "description": "<p>Le Format est Authorization: Bearer [token].</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AuthorizationHeader",
+            "description": "<p>Aucune Authorization trouver.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidToken",
+            "description": "<p>token invalide .</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "DataVerificationError",
+            "description": "<p>Les paramètres envoyés sont invalide.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "internalError",
+            "description": "<p>Erreur survenue à l'enregistrement</p>"
+          }
+        ],
+        "Error 5xx": [
+          {
+            "group": "Error 5xx",
+            "optional": false,
+            "field": "InternalError",
+            "description": "<p>Service   indisponible .</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Exemple reponse d'échec :",
+          "content": "HTTP/1.1 200 \n{\n  \"status\": \"ko\",\n  \"name\": \"DataVerificationError\",\n  \"message\" : \"Les paramètres envoyés sont invalide\"\n}",
           "type": "json"
         }
       ]
@@ -4080,6 +4159,577 @@
         {
           "title": "Exemple reponse d'échec :",
           "content": "HTTP/1.1 200 \n{\n  \"status\": \"ko\",\n  \"name\": \"internalError\",\n  \"trace\":\"\"\n  \"message\" : \"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./doc 2.js",
+    "groupTitle": "Vaccination"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/all/vaccination",
+    "title": "Afficher tous les vaccinations",
+    "version": "1.0.0",
+    "name": "Affiche_vaccinations",
+    "group": "Vaccination",
+    "description": "<p>Pour afficher  les informations des vaccinations</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token unique de l'utilisateur disponible quand l'utilisateur se log  .</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Exemple:",
+          "content": "{\n  \"Content-Type\": \"application/x-www-form-urlencoded\",\n  \"Authorization\": \"Bearer token\",\n  \"Accept\": \"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "vaccinations",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Reponse de succès :",
+          "content": "\n HTTP/1.1 200 OK\n\n{\n  \"status\": \"ok\",\n  \"vaccinations : [{}]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "internalError",
+            "description": "<p>Une erreur est survenue à la recupération des données</p>"
+          }
+        ],
+        "Error 5xx": [
+          {
+            "group": "Error 5xx",
+            "optional": false,
+            "field": "InternalError",
+            "description": "<p>Service   indisponible .</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Exemple reponse d'échec :",
+          "content": "HTTP/1.1 200 \n{\n  \"status\": \"ko\",\n  \"name\": \"internalError\",\n  \"trace\":\"\"\n  \"message\" : \"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./doc 2.js",
+    "groupTitle": "Vaccination"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/find/vaccination/by/medecin",
+    "title": "Afficher une vaccination en particulier",
+    "version": "1.0.0",
+    "name": "Affiche_vaccinations_pour_un_medecin",
+    "group": "Vaccination",
+    "description": "<p>Pour afficher  les informations de  vaccination effectuer par un medecin</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token unique de l'utilisateur disponible quand l'utilisateur se log  .</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Exemple:",
+          "content": "{\n  \"Content-Type\": \"application/x-www-form-urlencoded\",\n  \"Authorization\": \"Bearer token\",\n  \"Accept\": \"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Body-Exemple:",
+          "content": "\n    \n{\n\n \"id\":1\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "vaccinations",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Reponse de succès :",
+          "content": "\n HTTP/1.1 200 OK\n\n{\n  \"status\": \"ok\",\n  \"vaccinations : [{}]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "internalError",
+            "description": "<p>Une erreur est survenue à la recupération des données</p>"
+          }
+        ],
+        "Error 5xx": [
+          {
+            "group": "Error 5xx",
+            "optional": false,
+            "field": "InternalError",
+            "description": "<p>Service   indisponible .</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Exemple reponse d'échec :",
+          "content": "HTTP/1.1 200 \n{\n  \"status\": \"ko\",\n  \"name\": \"internalError\",\n  \"trace\":\"\"\n  \"message\" : \"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./doc 2.js",
+    "groupTitle": "Vaccination"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/find/vaccination/by/patient",
+    "title": "Afficher une vaccination en particulier",
+    "version": "1.0.0",
+    "name": "Affiche_vaccinations_pour_un_patient",
+    "group": "Vaccination",
+    "description": "<p>Pour afficher  les informations de  vaccination effectuer par un patient</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token unique de l'utilisateur disponible quand l'utilisateur se log  .</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Exemple:",
+          "content": "{\n  \"Content-Type\": \"application/x-www-form-urlencoded\",\n  \"Authorization\": \"Bearer token\",\n  \"Accept\": \"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Body-Exemple:",
+          "content": "\n    \n{\n\n \"id\":1\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "vaccinations",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Reponse de succès :",
+          "content": "\n HTTP/1.1 200 OK\n\n{\n  \"status\": \"ok\",\n  \"vaccinations : [{}]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "internalError",
+            "description": "<p>Une erreur est survenue à la recupération des données</p>"
+          }
+        ],
+        "Error 5xx": [
+          {
+            "group": "Error 5xx",
+            "optional": false,
+            "field": "InternalError",
+            "description": "<p>Service   indisponible .</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Exemple reponse d'échec :",
+          "content": "HTTP/1.1 200 \n{\n  \"status\": \"ko\",\n  \"name\": \"internalError\",\n  \"trace\":\"\"\n  \"message\" : \"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./doc 2.js",
+    "groupTitle": "Vaccination"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/find/vaccination/by/vaccin",
+    "title": "Afficher une vaccination en particulier",
+    "version": "1.0.0",
+    "name": "Affiche_vaccinations_pour_un_vaccin",
+    "group": "Vaccination",
+    "description": "<p>Pour afficher  les informations de  vaccination effectuer par un vaccin</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token unique de l'utilisateur disponible quand l'utilisateur se log  .</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Exemple:",
+          "content": "{\n  \"Content-Type\": \"application/x-www-form-urlencoded\",\n  \"Authorization\": \"Bearer token\",\n  \"Accept\": \"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Body-Exemple:",
+          "content": "\n    \n{\n\n \"id\":1\n\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "vaccinations",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Reponse de succès :",
+          "content": "\n HTTP/1.1 200 OK\n\n{\n  \"status\": \"ok\",\n  \"vaccinations : [{}]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "internalError",
+            "description": "<p>Une erreur est survenue à la recupération des données</p>"
+          }
+        ],
+        "Error 5xx": [
+          {
+            "group": "Error 5xx",
+            "optional": false,
+            "field": "InternalError",
+            "description": "<p>Service   indisponible .</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Exemple reponse d'échec :",
+          "content": "HTTP/1.1 200 \n{\n  \"status\": \"ko\",\n  \"name\": \"internalError\",\n  \"trace\":\"\"\n  \"message\" : \"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "./doc 2.js",
+    "groupTitle": "Vaccination"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/add/vaccination",
+    "title": "Ajouter une vaccination",
+    "version": "1.0.0",
+    "name": "Ajouter_une_vaccination",
+    "group": "Vaccination",
+    "description": "<p>Pour l'ajout d'un Vaccination</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token unique de l'utilisateur disponible quand l'utilisateur se log  .</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Exemple:",
+          "content": "{\n  \"Content-Type\": \"application/x-www-form-urlencoded\",\n  \"Authorization\": \"Bearer token\",\n  \"Accept\": \"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "dosePrise",
+            "description": ""
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "code_enrollement",
+            "description": ""
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "datePrise",
+            "description": ""
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "dateExpirationPrise",
+            "description": ""
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "patient",
+            "description": ""
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "medecin",
+            "description": ""
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "vaccin",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Body-Exemple:",
+          "content": "\n    \n{\n     \n       \"dosePrise\": \"ASTElkm\",\n       \"code_enrollement\": \"corona\",\n       \"datePrise\": \"lol\",\n       \"dateExpirationPrise\": \"1\",\n       \"patient\": \"12\",\n       \"medecin\": \"5\",\n         \"vaccin\": \"5\",\n      \n }",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "vaccination",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Reponse de succès :",
+          "content": "    HTTP/1.1 200 OK\n    {\n    status:'ok',\n    vaccination: {\n        \n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AuthorizationFormat",
+            "description": "<p>Le Format est Authorization: Bearer [token].</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "AuthorizationHeader",
+            "description": "<p>Aucune Authorization trouver.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidToken",
+            "description": "<p>token invalide .</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "DataVerificationError",
+            "description": "<p>Les paramètres envoyés sont invalide.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "internalError",
+            "description": "<p>Erreur survenue à l'enregistrement</p>"
+          }
+        ],
+        "Error 5xx": [
+          {
+            "group": "Error 5xx",
+            "optional": false,
+            "field": "InternalError",
+            "description": "<p>Service   indisponible .</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Exemple reponse d'échec :",
+          "content": "HTTP/1.1 200 \n{\n  \"status\": \"ko\",\n  \"name\": \"DataVerificationError\",\n  \"message\" : \"Les paramètres envoyés sont invalide\"\n}",
           "type": "json"
         }
       ]

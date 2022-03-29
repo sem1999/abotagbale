@@ -46,7 +46,7 @@ module.exports = {
       ])
       .fetch()
   
-      return  exits.success(data);  
+      return  exits.success({status:'ok', vaccination:data[0]});  
         
       } catch (error) {
   

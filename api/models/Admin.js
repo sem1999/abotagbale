@@ -32,8 +32,8 @@ module.exports = {
 
   customToJSON: function () {
     return _.omit(this, ['password']);
-
   },
+  
   beforeCreate: function (admin, cb) {
     bcrypt.genSalt(10, function (err, salt) {
       bcrypt.hash(admin.password, salt, null, function (err, hash) {

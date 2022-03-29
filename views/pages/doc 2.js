@@ -275,7 +275,7 @@
 *   "email": "baba@mail.com",
 *   "date_naissance": "20/03/1993",
 *   "status": "ok",
-*   "medecin_admin": "1"
+*   "Admin_medecin": "1"
 *   "centre":"1"}
 *   
 *  }
@@ -305,7 +305,7 @@
 /**
 * @api {post} /api/v1/add/admin/medecin      Ajouter un Medecin admin
 * @apiVersion 1.0.0
-* @apiName Ajouter Medecin Admin
+* @apiName Ajouter un medecin Admin
 * @apiGroup Admin_medecin
 *
 * @apiDescription Pour l'ajout d'un medecin admin 
@@ -399,6 +399,186 @@
 *       "message" : "Les paramètres envoyés sont invalide"
 *     }
 */
+
+
+
+/**
+* @api {post} /api/v1/add/vaccin     Ajouter un vaccin
+* @apiVersion 1.0.0
+* @apiName Ajouter un vaccin
+* @apiGroup Vaccin
+*
+* @apiDescription Pour l'ajout d'un Vaccin
+*  
+* 
+* 
+* 
+* @apiHeader {String} Authorization  Token unique de l'utilisateur disponible quand l'utilisateur se log  .
+* 
+* @apiHeaderExample {json} Header-Exemple:
+*     {
+*       "Content-Type": "application/x-www-form-urlencoded",
+*       "Authorization": "Bearer token",
+*       "Accept": "application/json"
+*     }
+* 
+* 
+* @apiParam (Body) {String}    libelle  
+* @apiParam (Body) {String}    maladie    
+* @apiParam (Body) {String}    description  
+* @apiParam (Body) {String}    doseRcmd
+* @apiParam (Body) {String}    codeVaccin
+* @apiParam (Body) {String}    dateExpiration
+    
+* 
+* @apiParamExample {json} Body-Exemple:
+* 
+*     
+* {
+*      
+*        "libelle": "ASTElkm",
+*        "maladie": "corona",
+*        "description": "lol",
+*        "doseRcmd": "1",
+*        "codeVaccin": "12",
+*        "dateExpiration": "5",
+*       
+*  }
+*
+* 
+* 
+* 
+* 
+* @apiSuccess {String} status       
+* @apiSuccess {String} vaccin  
+
+* 
+* 
+* 
+* 
+* @apiSuccessExample {json} Reponse de succès :
+*     HTTP/1.1 200 OK
+*     {
+*     status:'ok',
+*     vacin: {
+        "createdAt": 1648534987580,
+        "updatedAt": 1648534987580,
+        "id": 3,
+        "libelle": "ASTElkm",
+        "maladie": "corona",
+        "description": "lol",
+        "dose_rcmd": "1",
+        "code_vaccin": "12",
+        "etat_vaccin": "good",
+        "date_expiration": "5",
+        "status": true
+    }
+*}
+* 
+*
+* @apiError AuthorizationFormat    Le Format est Authorization: Bearer [token].
+* @apiError AuthorizationHeader    Aucune Authorization trouver.
+* @apiError InvalidToken           token invalide .
+* @apiError DataVerificationError  Les paramètres envoyés sont invalide.
+* @apiError internalError          Erreur survenue à l'enregistrement 
+* 
+* 
+* @apiError (Error 5xx) InternalError Service   indisponible .
+* 
+* @apiErrorExample {json} Exemple reponse d'échec :
+*     HTTP/1.1 200 
+*     {
+*       "status": "ko",
+*       "name": "DataVerificationError",
+*       "message" : "Les paramètres envoyés sont invalide"
+*     }
+*/
+
+
+/**
+* @api {post} /api/v1/add/vaccination     Ajouter une vaccination
+* @apiVersion 1.0.0
+* @apiName Ajouter une vaccination
+* @apiGroup Vaccination
+*
+* @apiDescription Pour l'ajout d'un Vaccination
+*  
+* 
+* 
+* 
+* @apiHeader {String} Authorization  Token unique de l'utilisateur disponible quand l'utilisateur se log  .
+* 
+* @apiHeaderExample {json} Header-Exemple:
+*     {
+*       "Content-Type": "application/x-www-form-urlencoded",
+*       "Authorization": "Bearer token",
+*       "Accept": "application/json"
+*     }
+* 
+* 
+* @apiParam (Body) {String}    dosePrise  
+* @apiParam (Body) {String}    code_enrollement    
+* @apiParam (Body) {String}    datePrise  
+* @apiParam (Body) {String}    dateExpirationPrise
+* @apiParam (Body) {String}    patient
+* @apiParam (Body) {String}    medecin
+* @apiParam (Body) {String}    vaccin
+*    
+* 
+* @apiParamExample {json} Body-Exemple:
+* 
+*     
+* {
+*      
+*        "dosePrise": "ASTElkm",
+*        "code_enrollement": "corona",
+*        "datePrise": "lol",
+*        "dateExpirationPrise": "1",
+*        "patient": "12",
+*        "medecin": "5",
+         "vaccin": "5",
+*       
+*  }
+*
+* 
+* 
+* 
+* 
+* @apiSuccess {String} status       
+* @apiSuccess {String} vaccination 
+
+* 
+* 
+* 
+* 
+* @apiSuccessExample {json} Reponse de succès :
+*     HTTP/1.1 200 OK
+*     {
+*     status:'ok',
+*     vaccination: {
+        
+    }
+*}
+* 
+*
+* @apiError AuthorizationFormat    Le Format est Authorization: Bearer [token].
+* @apiError AuthorizationHeader    Aucune Authorization trouver.
+* @apiError InvalidToken           token invalide .
+* @apiError DataVerificationError  Les paramètres envoyés sont invalide.
+* @apiError internalError          Erreur survenue à l'enregistrement 
+* 
+* 
+* @apiError (Error 5xx) InternalError Service   indisponible .
+* 
+* @apiErrorExample {json} Exemple reponse d'échec :
+*     HTTP/1.1 200 
+*     {
+*       "status": "ko",
+*       "name": "DataVerificationError",
+*       "message" : "Les paramètres envoyés sont invalide"
+*     }
+*/
+
 
 
 
@@ -1827,8 +2007,8 @@
 /**
  * @api {post} /api/v1/all/admin/medecin  Afficher tous les medecins admin
  * @apiVersion 1.0.0
- * @apiName Affiche medecin admin
- * @apiGroup Medecin_admin
+ * @apiName Affiche tous les medecins admin
+ * @apiGroup Admin_medecin
  *
  * @apiDescription Pour afficher  les informations des medecins admin
  * 
@@ -1983,7 +2163,7 @@
  * @api {post} /api/v1/all/vaccination  Afficher tous les vaccinations
  * @apiVersion 1.0.0
  * @apiName Affiche vaccinations
- * @apiGroup Vaccin
+ * @apiGroup Vaccination
  *
  * @apiDescription Pour afficher  les informations des vaccinations
  * 
@@ -2029,6 +2209,8 @@
  *       "message" : ""
  *     }
  */
+
+
 
 /**
  * @api {post} /api/v1/find/vaccination/by/id  Afficher une vaccination en particulier 
@@ -2090,6 +2272,195 @@
  *       "message" : ""
  *     }
  */
+
+
+
+/**
+ * @api {post} /api/v1/find/vaccination/by/medecin  Afficher une vaccination en particulier 
+ * @apiVersion 1.0.0
+ * @apiName Affiche vaccinations pour un medecin
+ * @apiGroup Vaccination
+ *
+ * @apiDescription Pour afficher  les informations de  vaccination effectuer par un medecin
+ * 
+ * 
+ * 
+ *
+
+ * @apiHeader {String} Authorization  Token unique de l'utilisateur disponible quand l'utilisateur se log  .
+ *
+ * 
+ * @apiHeaderExample {json} Header-Exemple:
+ *     {
+ *       "Content-Type": "application/x-www-form-urlencoded",
+ *       "Authorization": "Bearer token",
+ *       "Accept": "application/json"
+ *     }
+ * 
+ * @apiParam (Body) {String}    id     
+ * 
+ * @apiParamExample {json} Body-Exemple:
+ * 
+ *     
+ * {
+ * 
+ *  "id":1
+ *
+ * }
+ *
+ * 
+ * @apiSuccess {String} status       
+ * @apiSuccess {String} vaccinations 
+ * 
+ * @apiSuccessExample {json} Reponse de succès :
+ * 
+ *     HTTP/1.1 200 OK
+ *
+ *    {
+ *      "status": "ok",
+ *      "vaccinations : [{}]
+ *    }
+ * 
+ *
+ * @apiError internalError  Une erreur est survenue à la recupération des données 
+ * 
+ * 
+ * @apiError (Error 5xx) InternalError Service   indisponible .
+ * 
+ * @apiErrorExample {json} Exemple reponse d'échec :
+ *     HTTP/1.1 200 
+ *     {
+ *       "status": "ko",
+ *       "name": "internalError",
+ *       "trace":""
+ *       "message" : ""
+ *     }
+ */
+
+
+/**
+ * @api {post} /api/v1/find/vaccination/by/patient  Afficher une vaccination en particulier 
+ * @apiVersion 1.0.0
+ * @apiName Affiche vaccinations pour un patient
+ * @apiGroup Vaccination
+ *
+ * @apiDescription Pour afficher  les informations de  vaccination effectuer par un patient
+ * 
+ * 
+ * 
+ *
+ * @apiHeader {String} Authorization  Token unique de l'utilisateur disponible quand l'utilisateur se log  .
+ *
+ * 
+ * @apiHeaderExample {json} Header-Exemple:
+ *     {
+ *       "Content-Type": "application/x-www-form-urlencoded",
+ *       "Authorization": "Bearer token",
+ *       "Accept": "application/json"
+ *     }
+ * 
+ * @apiParam (Body) {String}    id     
+ * 
+ * @apiParamExample {json} Body-Exemple:
+ * 
+ *     
+ * {
+ * 
+ *  "id":1
+ *
+ * }
+ *
+ * 
+ * @apiSuccess {String} status       
+ * @apiSuccess {String} vaccinations  
+ * 
+ * @apiSuccessExample {json} Reponse de succès :
+ * 
+ *     HTTP/1.1 200 OK
+ *
+ *    {
+ *      "status": "ok",
+ *      "vaccinations : [{}]
+ *    }
+ * 
+ *
+ * @apiError internalError  Une erreur est survenue à la recupération des données 
+ * 
+ * 
+ * @apiError (Error 5xx) InternalError Service   indisponible .
+ * 
+ * @apiErrorExample {json} Exemple reponse d'échec :
+ *     HTTP/1.1 200 
+ *     {
+ *       "status": "ko",
+ *       "name": "internalError",
+ *       "trace":""
+ *       "message" : ""
+ *     }
+ */
+
+/**
+ * @api {post} /api/v1/find/vaccination/by/vaccin  Afficher une vaccination en particulier 
+ * @apiVersion 1.0.0
+ * @apiName Affiche vaccinations pour un vaccin
+ * @apiGroup Vaccination
+ *
+ * @apiDescription Pour afficher  les informations de  vaccination effectuer par un vaccin
+ * 
+ * 
+ * 
+ *
+ * @apiHeader {String} Authorization  Token unique de l'utilisateur disponible quand l'utilisateur se log  .
+ *
+ * 
+ * @apiHeaderExample {json} Header-Exemple:
+ *     {
+ *       "Content-Type": "application/x-www-form-urlencoded",
+ *       "Authorization": "Bearer token",
+ *       "Accept": "application/json"
+ *     }
+ * 
+ * @apiParam (Body) {String}    id     
+ * 
+ * @apiParamExample {json} Body-Exemple:
+ * 
+ *     
+ * {
+ * 
+ *  "id":1
+ *
+ * }
+ *
+ * 
+ * @apiSuccess {String} status       
+ * @apiSuccess {String} vaccinations  
+ * 
+ * @apiSuccessExample {json} Reponse de succès :
+ * 
+ *     HTTP/1.1 200 OK
+ *
+ *    {
+ *      "status": "ok",
+ *      "vaccinations : [{}]
+ *    }
+ * 
+ *
+ * @apiError internalError  Une erreur est survenue à la recupération des données 
+ * 
+ * 
+ * @apiError (Error 5xx) InternalError Service   indisponible .
+ * 
+ * @apiErrorExample {json} Exemple reponse d'échec :
+ *     HTTP/1.1 200 
+ *     {
+ *       "status": "ko",
+ *       "name": "internalError",
+ *       "trace":""
+ *       "message" : ""
+ *     }
+ */
+
+
 
 /**
  * @api {post} /api/v1/find/vaccin/by/id  Afficher un vaccin en particulier 
@@ -2345,8 +2716,8 @@
 /**
  * @api {post} /api/v1/find/admin/medecin/by/id  Afficher un medecin admin en particulier 
  * @apiVersion 1.0.0
- * @apiName Affiche medecin admin
- * @apiGroup Medecin_admin
+ * @apiName Affiche un medecin admin par id
+ * @apiGroup Admin_medecin
  *
  * @apiDescription Pour afficher  les informations d'un  medecin admin par son id
  * 
@@ -2407,7 +2778,7 @@
 /**
  * @api {post} /api/v1/find/centre/by/id  Afficher un centre en particulier 
  * @apiVersion 1.0.0
- * @apiName Affiche centre
+ * @apiName Affiche un  centre par son id
  * @apiGroup Centre
  *
  * @apiDescription Pour afficher  les informations d'un  centre par son id

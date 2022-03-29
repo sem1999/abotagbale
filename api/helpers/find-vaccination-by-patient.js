@@ -24,7 +24,7 @@ module.exports = {
   fn: async function (inputs, exits) {
     try {
       data = await Vaccination.find({ patient: inputs.id });
-      exits.success(data);
+      return exits.success({status:'ok', vaccinations:data});
     } catch (error) {
       return exits.success({
         status: 'ko',
