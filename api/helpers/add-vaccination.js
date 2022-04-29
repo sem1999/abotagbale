@@ -16,6 +16,7 @@ module.exports = {
     patient:{type:'number', required: true},
     medecin:{type:'number', required: true},
     vaccin:{type:'number', required: true},
+    
 
   },
 
@@ -55,11 +56,12 @@ module.exports = {
         message:'Une erreur interne est survenue  ',
         trace:error,
         description:'Veuillez vérifier vos informations  '});
+
+        
         
       }
 
   }
 
 
-};
-
+}
